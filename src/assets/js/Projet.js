@@ -62,12 +62,14 @@ export default class Projet {
         const btnCloseDetail = document.createElement('button');
         const btnNext = document.createElement('button');
         const btnPrevious = document.createElement('button');
+        const detailContentHtml = document.createElement('div');
 
         dialogDetail.classList.add('dialog');
         detailHtml.classList.add('card-detail');
         btnCloseDetail.classList.add('btn-close');
         btnNext.classList.add('btn-next');
         btnPrevious.classList.add('btn-previous');
+        detailContentHtml.classList.add('project-details-container');
 
         dialogDetail.id = this.id;
 
@@ -79,6 +81,7 @@ export default class Projet {
         detailHtml.appendChild(btnCloseDetail);
         detailHtml.appendChild(btnPrevious);
         detailHtml.appendChild(btnNext);
+        detailHtml.appendChild(detailContentHtml);
 
         return dialogDetail;
     }

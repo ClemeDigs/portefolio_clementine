@@ -53,12 +53,12 @@ sectionProjets.addEventListener('animationend', () => {
 });
 
 
-bannerRight.addEventListener('mouseover', () => {
+imgBanner2.addEventListener('mouseover', () => {
     imgBanner.style.opacity = 0;
     imgBanner2.style.opacity = 1;
 });
 
-bannerRight.addEventListener('mouseout', () => {
+imgBanner2.addEventListener('mouseout', () => {
     imgBanner.style.opacity = 1;
     imgBanner2.style.opacity = 0;
 });
