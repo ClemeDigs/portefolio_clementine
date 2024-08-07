@@ -15,16 +15,13 @@ export default class Projet {
         const cardInfoHtml = document.createElement('div');
         const imgHtml = document.createElement('img');
         const titleHtml = document.createElement('h3');
-        const descHtml = document.createElement('p');
         const taskHtml = document.createElement('p');
         const dateHtml = document.createElement('p');
-        const linkHtml = document.createElement('a');
         const btnMore = document.createElement('button');
 
         cardHtml.setAttribute('data-filter', this.categorie.join(' '));
         imgHtml.setAttribute('src', this.img);
         imgHtml.setAttribute('alt', this.title);
-        linkHtml.setAttribute('href', this.link);
         btnMore.setAttribute('data-dialog', ('#' + this.id));
 
         cardHtml.classList.add('div-projet');
@@ -38,19 +35,15 @@ export default class Projet {
         btnMore.classList.add('');  */
 
         titleHtml.textContent = this.title;
-        descHtml.textContent = this.desc;
         taskHtml.textContent = this.task;
         dateHtml.textContent = this.date;
-        linkHtml.textContent = 'Visitez';
         btnMore.textContent = 'En savoir plus';
 
         cardHtml.appendChild(cardInfoHtml);
         cardHtml.appendChild(imgHtml);
         cardInfoHtml.appendChild(titleHtml);
-        cardInfoHtml.appendChild(descHtml);
         cardInfoHtml.appendChild(taskHtml);
         cardInfoHtml.appendChild(dateHtml);
-        cardInfoHtml.appendChild(linkHtml);
         cardInfoHtml.appendChild(btnMore);
 
         return cardHtml;
@@ -63,6 +56,9 @@ export default class Projet {
         const btnNext = document.createElement('button');
         const btnPrevious = document.createElement('button');
         const detailContentHtml = document.createElement('div');
+        const titleHtml = document.createElement('h3');
+        const descHtml = document.createElement('p');
+        const linkHtml = document.createElement('a');
 
         dialogDetail.classList.add('dialog');
         detailHtml.classList.add('card-detail');
@@ -71,17 +67,25 @@ export default class Projet {
         btnPrevious.classList.add('btn-previous');
         detailContentHtml.classList.add('project-details-container');
 
+
         dialogDetail.id = this.id;
+        linkHtml.setAttribute('href', this.link);
 
         btnCloseDetail.textContent = 'X';
         btnNext.textContent = '>';
         btnPrevious.textContent = '<';
+        titleHtml.textContent = this.title;
+        descHtml.textContent = this.desc;
+        linkHtml.textContent = 'Visitez';
 
         dialogDetail.appendChild(detailHtml);
         detailHtml.appendChild(btnCloseDetail);
         detailHtml.appendChild(btnPrevious);
         detailHtml.appendChild(btnNext);
         detailHtml.appendChild(detailContentHtml);
+        detailContentHtml.appendChild(titleHtml);
+        detailContentHtml.appendChild(descHtml);
+        detailContentHtml.appendChild(linkHtml);
 
         return dialogDetail;
     }

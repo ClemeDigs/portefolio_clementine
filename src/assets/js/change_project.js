@@ -5,10 +5,12 @@ const modalsContents = document.querySelectorAll('.project-details-container');
 
 let currentIndex = 0;
 
-
 btnsNext.forEach(btnNext => {
+    
     btnNext.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % projectsDetails.length;
+        console.log(projectsDetails.length);
+        currentIndex = (currentIndex + 1);
+        console.log(currentIndex);
         updateModalContent(currentIndex);
     });
 });
@@ -16,15 +18,14 @@ btnsNext.forEach(btnNext => {
 
 btnsPrevious.forEach(btnPrevious => {
     btnPrevious.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + projectsDetails.length) % projectsDetails.length;
+        currentIndex = (currentIndex - 1);
         updateModalContent(currentIndex);
     });
 });
 
 
-function updateModalContent(index) {
-    const projectDetail = projectsDetails[index].innerHTML;
-    modalsContents.forEach(modalContent => {
-        modalContent.innerHTML = projectDetail;
+function updateModalContent() {
+    projectsDetails.forEach(projectDetail => {
+        projectDetail.innerHtml = projectDetail[currentIndex];
     })
 }
