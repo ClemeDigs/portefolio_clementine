@@ -12,7 +12,7 @@ export default class Projet {
 
     toGridHtml(){
         const cardHtml = document.createElement('div');
-        const cardHoverHtml = document.createElement('div');
+        const cardInfoHtml = document.createElement('div');
         const imgHtml = document.createElement('img');
         const titleHtml = document.createElement('h3');
         const descHtml = document.createElement('p');
@@ -25,10 +25,10 @@ export default class Projet {
         imgHtml.setAttribute('src', this.img);
         imgHtml.setAttribute('alt', this.title);
         linkHtml.setAttribute('href', this.link);
-
+        btnMore.setAttribute('data-dialog', ('#' + this.id));
 
         cardHtml.classList.add('div-projet');
-        cardHoverHtml.classList.add('div-info');
+        cardInfoHtml.classList.add('div-info');
         imgHtml.classList.add('img-projet');
         /* titleHtml.classList.add('');
         descHtml.classList.add('');
@@ -42,21 +42,44 @@ export default class Projet {
         taskHtml.textContent = this.task;
         dateHtml.textContent = this.date;
         linkHtml.textContent = 'Visitez';
-        btnMore.textContent = 'En svoir plus';
+        btnMore.textContent = 'En savoir plus';
 
-        cardHtml.appendChild(cardHoverHtml);
+        cardHtml.appendChild(cardInfoHtml);
         cardHtml.appendChild(imgHtml);
-        cardHoverHtml.appendChild(titleHtml);
-        cardHoverHtml.appendChild(descHtml);
-        cardHoverHtml.appendChild(taskHtml);
-        cardHoverHtml.appendChild(dateHtml);
-        cardHoverHtml.appendChild(linkHtml);
+        cardInfoHtml.appendChild(titleHtml);
+        cardInfoHtml.appendChild(descHtml);
+        cardInfoHtml.appendChild(taskHtml);
+        cardInfoHtml.appendChild(dateHtml);
+        cardInfoHtml.appendChild(linkHtml);
+        cardInfoHtml.appendChild(btnMore);
 
         return cardHtml;
     }
 
     toDetailHtml() {
+        const dialogDetail = document.createElement('div');
         const detailHtml = document.createElement('div');
+        const btnCloseDetail = document.createElement('button');
+        const btnNext = document.createElement('button');
+        const btnPrevious = document.createElement('button');
 
+        dialogDetail.classList.add('dialog');
+        detailHtml.classList.add('card-detail');
+        btnCloseDetail.classList.add('btn-close');
+        btnNext.classList.add('btn-next');
+        btnPrevious.classList.add('btn-previous');
+
+        dialogDetail.id = this.id;
+
+        btnCloseDetail.textContent = 'X';
+        btnNext.textContent = '>';
+        btnPrevious.textContent = '<';
+
+        dialogDetail.appendChild(detailHtml);
+        detailHtml.appendChild(btnCloseDetail);
+        detailHtml.appendChild(btnPrevious);
+        detailHtml.appendChild(btnNext);
+
+        return dialogDetail;
     }
 }

@@ -17,16 +17,16 @@ const sectionProjets = document.querySelector('.mes-projets');
 btnSwitchTheme.addEventListener('click', () => {
     imgBanner.style.opacity = 0;
     setTimeout( () => {
-        if (themeStylesheet.getAttribute('href') === './assets/css/themeColor/main.css') {
-            themeStylesheet.setAttribute('href', './assets/css/themeDark/main.css');
+        if (themeStylesheet.getAttribute('href') === '/assets/css/themeColor/main.css') {
+            themeStylesheet.setAttribute('href', '/assets/css/themeDark/main.css');
             imgBanner.setAttribute('src', imgFemmeDark);
             imgBanner2.setAttribute('src', imgFemmeDark2);
-        } else if (themeStylesheet.getAttribute('href') === './assets/css/themeDark/main.css') {
-            themeStylesheet.setAttribute('href', './assets/css/themeClassic/main.css');
+        } else if (themeStylesheet.getAttribute('href') === '/assets/css/themeDark/main.css') {
+            themeStylesheet.setAttribute('href', '/assets/css/themeClassic/main.css');
             imgBanner.setAttribute('src', imgFemmeClassic);
             imgBanner2.setAttribute('src', imgFemmeClassic);
         } else {
-            themeStylesheet.setAttribute('href', './assets/css/themeColor/main.css');
+            themeStylesheet.setAttribute('href', '/assets/css/themeColor/main.css');
             imgBanner.setAttribute('src', imgFemmeColor);
             imgBanner2.setAttribute('src', imgFemmeColor2);
         } 
@@ -36,7 +36,7 @@ btnSwitchTheme.addEventListener('click', () => {
 });
 
 btnSwitchTheme.addEventListener('click', () => {
-    if (themeStylesheet.getAttribute('href') === './assets/css/themeColor/main.css') {
+    if (themeStylesheet.getAttribute('href') === '/assets/css/themeColor/main.css') {
         header.classList.add('animate__animated', 'animate__fadeOutUp');
         sectionProjets.classList.add('animate__animated', 'animate__slideOutRight');
     } 

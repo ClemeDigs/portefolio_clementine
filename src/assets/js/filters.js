@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filtersDiv = document.querySelector('.filters');
     const projets = document.querySelectorAll('.div-projet');
     const filters = document.querySelectorAll('.checkbox-filter');
+    
 
     filterIcon.addEventListener('click', () => {
         filtersDiv.classList.toggle('hidden');

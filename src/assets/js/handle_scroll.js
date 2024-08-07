@@ -14,7 +14,7 @@ function handelScroll() {
 }
 
 
-if (themeStylesheet.getAttribute('href') === './assets/css/themeColor/main.css') {
+if (themeStylesheet.getAttribute('href') === '/assets/css/themeColor/main.css') {
     window.onscroll = () => {
         handelScroll();
     }

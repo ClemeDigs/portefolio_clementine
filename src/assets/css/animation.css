@@ -13,7 +13,9 @@
 .dialog[open]{
     animation: fadeIn 0.5s forwards;
     display: grid;
+    grid-template-columns: repeat(4,1fr);
 }
+
 
 .dialog[closing]{
     animation: fadeOut 0.5s forwards;
