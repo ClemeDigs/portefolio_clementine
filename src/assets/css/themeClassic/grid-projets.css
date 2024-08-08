@@ -49,6 +49,18 @@
     opacity: 1;
 }
 
+.card-detail {
+    background-color: var(--light);
+    color: var(--text-dark);
+    grid-column: 2/4;
+    margin: 10rem 0;
+    padding: 1rem;
+}
+
+.card-detail a {
+    color: var(--text-dark);
+}
+
 
 @media screen and (min-width:650px) {
 
